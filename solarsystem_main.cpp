@@ -6,7 +6,7 @@
 constexpr unsigned WINDOW_WIDTH = 1200;
 constexpr unsigned WINDOW_HEIGHT = 800;
 
-double SCALE = 1e9;
+double SCALE = 5e7;
 
 constexpr std::size_t TRAIL_LENGTH = 800;
 
@@ -29,9 +29,12 @@ int main() {
 
   Body mars(6.39e23, 4.f, {2.279e11, 0, 0}, {0, 24070, 0}, sf::Color(200, 100, 80));
 
+  Body moon(7.342e22, 1.5f, {1.496e11 + 3.844e8, 0, 0}, {0, 29780 + 1022, 0}, sf::Color(200, 200, 200));
+  
   system.add_body(sun);
   system.add_body(earth);
   system.add_body(mars);
+  system.add_body(moon);
 
   system.compute_accelerations();
 
